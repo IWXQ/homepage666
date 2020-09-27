@@ -27,7 +27,7 @@ body {
   left: 0;
   top: 0;
   margin: 0;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color:rgba(24, 144, 255,.8);
   background-size: 100% 100%;
 }
 #app {

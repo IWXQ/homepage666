@@ -85,13 +85,6 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-.inputMain >>> .el-input__inner {
-  font-size: 18px !important;
-  color: #000000 !important;
-  font-family: cursive !important;
-  height: 48px;
-  width: 50%;
-}
 
 .inputMain {
   position: relative;
