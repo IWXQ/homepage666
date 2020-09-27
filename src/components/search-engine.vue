@@ -78,9 +78,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .searchMain {
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .inputMain >>> .el-input__inner {
@@ -89,6 +91,23 @@ export default {
   font-family: cursive !important;
   height: 48px;
   width: 50%;
+}
+
+.inputMain {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  width: 724px;
+  height: 56px;
+  line-height: 54px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 29px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 a {
