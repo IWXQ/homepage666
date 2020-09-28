@@ -1,15 +1,15 @@
 <template>
   <div class="searchMain">
     <div>
-      <el-checkbox-group v-model="searchEngineChecked">
-        <el-checkbox
+      <el-radio-group v-model="searchEngineChecked">
+        <el-radio
           v-for="item in searchEngineItems"
           :label="item.name"
           :key="item.value"
         >
           {{ item.value }}
-        </el-checkbox>
-      </el-checkbox-group>
+        </el-radio>
+      </el-radio-group>
     </div>
     <div>
       <el-input
@@ -47,7 +47,7 @@ export default {
           value: "必应国际",
         },
       ],
-      searchEngineChecked: ["google", "baidu"],
+      searchEngineChecked: "google",
       searchText: "",
     };
   },
@@ -55,22 +55,12 @@ export default {
     onInput() {},
     searchSubmit() {
       console.log("SearchSubmit:" + this.searchText);
-
-      for (const engine of this.searchEngineChecked) {
-        if (engine === "baidu") {
-          window.open(`https://www.baidu.com/s?ie=utf-8&wd=${this.searchText}`);
-        } else if (engine === "google") {
-          window.open(
-            `https://www.google.com/search?newwindow=1&q=${this.searchText}`
-          );
-        } else if (engine === "bing-cn") {
-          window.open(`https://cn.bing.com/search?q=${this.searchText}`);
-        } else if (engine == "bing") {
-          window.open(
-            `https://cn.bing.com/search?&ensearch=1&q=${this.searchText}`
-          );
-        }
-      }
+       this.$router.push({
+          path: '/Search', query: {
+            q: this.searchText,
+            t: this.searchEngineChecked
+          }
+        })
     },
   },
 };
